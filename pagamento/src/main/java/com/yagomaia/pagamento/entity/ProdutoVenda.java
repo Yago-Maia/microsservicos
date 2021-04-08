@@ -1,6 +1,8 @@
 package com.yagomaia.pagamento.entity;
 
+import com.yagomaia.pagamento.data.vo.ProdutoVendaVO;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -30,4 +32,7 @@ public class ProdutoVenda implements Serializable {
     @JoinColumn(name = "id_venda")
     private Venda venda;
 
+    public static ProdutoVenda create(ProdutoVendaVO produtoVendaVO) {
+        return new ModelMapper().map(produtoVendaVO, ProdutoVenda.class);
+    }
 }

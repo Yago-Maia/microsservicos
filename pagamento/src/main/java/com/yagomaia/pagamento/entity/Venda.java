@@ -1,7 +1,10 @@
 package com.yagomaia.pagamento.entity;
 
+import com.yagomaia.pagamento.data.vo.VendaVO;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.ui.ModelMap;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -33,5 +36,9 @@ public class Venda implements Serializable {
 
     @Column(name = "valor_total", nullable = false, length = 10)
     private Double valorTotal;
+
+    public static Venda create(VendaVO vendaVO) {
+        return new ModelMapper().map(vendaVO, Venda.class);
+    }
 
 }
