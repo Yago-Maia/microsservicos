@@ -3,7 +3,6 @@ package com.yagomaia.pagamento.data.vo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.yagomaia.pagamento.entity.ProdutoVenda;
-import com.yagomaia.pagamento.entity.Venda;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.hateoas.RepresentationModel;
